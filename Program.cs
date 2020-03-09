@@ -10,7 +10,7 @@ namespace Slutprojekt
     {
         static void Main(string[] args)
         {
-        tete4
+            Console.WriteLine("Welcome to Rainbow operator picker!");
         }
     }
 }
