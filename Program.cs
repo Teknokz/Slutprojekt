@@ -10,36 +10,72 @@ namespace Slutprojekt
     {
         static void Main(string[] args)
         {
-            string[] Defenders =
-                {"Smoke",
-                 "Mute",
-                 "Castle",
-                 "Pulse",
-                 "Doc",
-                 "Rook",
-                 "Kapkan",
-                 "Tachanka",
-                 "Jäger",
-                 "Bandit",
-                 "Frost",
-                 "Valkyrie",
-                 "Caveira",
-                 "Echo",
-                 "Mira",
-                 "Lesion",
-                 "Ela",
-                 "Vigil",
-                 "Maestro",
-                 "Alibi",
-                 "Clash",
-                 "Kaid",
-                 "Mozzy",
-                 "Warden",
-                 "Goyo",
-                 "Wamai",
-                 "Oryx"
 
-            };
+
+            bool showMenu = true;
+            while (showMenu)
+            {
+                showMenu = MainMenu();
+            }
+
+        }
+
+        //Denna metod styr menyn 
+
+        private static bool MainMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("Defend or Attack?");
+            Console.WriteLine("1) Attack");
+            Console.WriteLine("2) Defend");
+            Console.WriteLine("3) Exit");
+            Console.Write("\r\nSelect an option: ");
+
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    Attack();
+                    return true;
+                case "2":
+                    Defend();
+                    return true;
+                case "3":
+                    return false;
+                default:
+                    return true;
+            }
+        }
+
+        private static string CaptureInput()
+        {
+            Console.Write("Enter... ");
+            return Console.ReadLine();
+        }
+
+        private static void Attack()
+        {
+            Console.Clear();
+            Console.WriteLine("You have chosen Attackers:");
+
+
+        }
+
+        private static void Defend()
+        {
+            Console.Clear();
+            Console.WriteLine("You have chosen Defenders:");
+
+        }
+
+        private static void DisplayResult(string message)
+        {
+            Console.WriteLine($"\r\nYour modified string is: {message}");
+            Console.Write("\r\nPress Enter to return to Main Menu");
+            Console.ReadLine();
+        }
+
+        private static void attackOperators()
+        {
 
             string[] Attackers =
                 {
@@ -70,73 +106,52 @@ namespace Slutprojekt
                  "Amaru <3",
                  "Kali",
                  "Iana"
+
             };
 
-            bool showMenu = true;
-            while (showMenu)
-            {
-                showMenu = MainMenu();
-            }
-
-            Console.WriteLine("Welcome to Rainbow operator picker!");
-
-            Console.WriteLine("Defend or Attack?");
 
         }
 
-        private static bool MainMenu()
+        private static void defendOperators()
         {
-            Console.Clear();
-            Console.WriteLine("Defend or Attack?");
-            Console.WriteLine("1) Attack");
-            Console.WriteLine("2) Defend");
-            Console.WriteLine("3) Exit");
-            Console.Write("\r\nSelect an option: ");
+            string[] Defenders =
+                {
+                "Smoke",
+                 "Mute",
+                 "Castle",
+                 "Pulse",
+                 "Doc",
+                 "Rook",
+                 "Kapkan",
+                 "Tachanka",
+                 "Jäger",
+                 "Bandit",
+                 "Frost",
+                 "Valkyrie",
+                 "Caveira",
+                 "Echo",
+                 "Mira",
+                 "Lesion",
+                 "Ela",
+                 "Vigil",
+                 "Maestro",
+                 "Alibi",
+                 "Clash",
+                 "Kaid",
+                 "Mozzy",
+                 "Warden",
+                 "Goyo",
+                 "Wamai",
+                 "Oryx"
+            };
 
-            switch (Console.ReadLine())
-            {
-                case "1":
-                    Attack();
-                    return true;
-                case "2":
-                    Defend();
-                    return true;
-                case "3":
-                    return false;
-                default:
-                    return true;
-            }
-        }
+            
 
-        private static string CaptureInput()
-        {
-            Console.Write("Enter the string you want to modify: ");
-            return Console.ReadLine();
-        }
+            Random generator = new Random();
 
-        private static void Attack()
-        {
-            Console.Clear();
-            Console.WriteLine("You have chosen Attackers:");
+            int value = Random.Next(0, 26);
 
-            char[] charArray = CaptureInput().ToCharArray();
-            Array.Reverse(charArray);
-            DisplayResult(String.Concat(charArray));
-        }
 
-        private static void Defend()
-        {
-            Console.Clear();
-            Console.WriteLine("You have chosen Defenders:");
-
-            DisplayResult(CaptureInput().Replace(" ", ""));
-        }
-
-        private static void DisplayResult(string message)
-        {
-            Console.WriteLine($"\r\nYour modified string is: {message}");
-            Console.Write("\r\nPress Enter to return to Main Menu");
-            Console.ReadLine();
         }
     }
 }
