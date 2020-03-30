@@ -46,35 +46,41 @@ namespace Slutprojekt
             }
         }
 
-        private static string CaptureInput()
-        {
-            Console.Write("Enter... ");
-            return Console.ReadLine();
-        }
+        //Denna metod styr Attack sektionen av huvudmenyn
 
         private static void Attack()
         {
             Console.Clear();
             Console.WriteLine("You have chosen Attackers:");
 
+            string attackResult = attackOperators();
 
+            Console.WriteLine("You got " + attackResult);
+
+            Console.WriteLine("Press Any key to retun to main menú");
+
+            Console.ReadLine();
         }
+
+        //Denna metod styr Defend sektionen av huvudmenyn
 
         private static void Defend()
         {
             Console.Clear();
             Console.WriteLine("You have chosen Defenders:");
 
-        }
+            string defendResult = defendOperators();
 
-        private static void DisplayResult(string message)
-        {
-            Console.WriteLine($"\r\nYour modified string is: {message}");
-            Console.Write("\r\nPress Enter to return to Main Menu");
+            Console.WriteLine("You got " + defendResult);
+
+            Console.WriteLine("Press Any key to retun to main menú");
+
             Console.ReadLine();
-        }
+        }     
 
-        private static void attackOperators()
+        //Metoden som ansvar för att lagra operatorindexen och randomiza svaret för Attackers
+
+        private static string attackOperators()
         {
 
             string[] Attackers =
@@ -109,10 +115,19 @@ namespace Slutprojekt
 
             };
 
+            Random generator = new Random();
+
+            int value = generator.Next(0, 27);
+
+            string i = Attackers[value];
+
+            return i;
 
         }
 
-        private static void defendOperators()
+        //Metoden som ansvar för att lagra operatorindexen och randomiza svaret för Defenders
+
+        private static string defendOperators()
         {
             string[] Defenders =
                 {
@@ -149,7 +164,11 @@ namespace Slutprojekt
 
             Random generator = new Random();
 
-            int value = Random.Next(0, 26);
+            int value = generator.Next(0, 27);
+
+            string i = Defenders[value];
+
+            return i;
 
 
         }
