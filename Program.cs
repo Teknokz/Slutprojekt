@@ -11,7 +11,7 @@ namespace Slutprojekt
         static void Main(string[] args)
         {
 
-
+            //Här säger jag åt boolen att visa main menu tills annat sägs
             bool showMenu = true;
             while (showMenu)
             {
@@ -30,6 +30,8 @@ namespace Slutprojekt
             Console.WriteLine("2) Defend");
             Console.WriteLine("3) Exit");
             Console.Write("\r\nSelect an option: ");
+
+            //Denna delen gör att man kan hoppa fram och tillbaka mellan de olika delarna i menyn
 
             switch (Console.ReadLine())
             {
@@ -83,6 +85,8 @@ namespace Slutprojekt
         private static string attackOperators()
         {
 
+            //index för att Attackers
+
             string[] Attackers =
                 {
                  "Sledge",
@@ -129,6 +133,9 @@ namespace Slutprojekt
 
         private static string defendOperators()
         {
+
+            //index för att Defenders
+
             string[] Defenders =
                 {
                 "Smoke",
@@ -169,7 +176,6 @@ namespace Slutprojekt
             string i = Defenders[value];
 
             return i;
-
 
         }
     }
