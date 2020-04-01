@@ -31,7 +31,7 @@ namespace Slutprojekt
             Console.WriteLine("3) Exit");
             Console.Write("\r\nSelect an option: ");
 
-            //Denna delen gör att man kan hoppa fram och tillbaka mellan de olika delarna i menyn
+            //Denna delen gör att man kan hoppa fram och tillbaka mellan de olika delarna i menyn. Jag har valt switch då det gör det väldigt simpelt att hoppa fram och tillbaka mellan respektive metod.
 
             switch (Console.ReadLine())
             {
